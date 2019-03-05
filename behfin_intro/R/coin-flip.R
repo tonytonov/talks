@@ -59,7 +59,7 @@ gg <- ggplot(df_coin_melt, aes(x, y, group = group, color = '')) +
                  geom = 'errorbar', color = '#FF9500', width = 0.15, size = 0.8) +
     scale_color_manual(name = NULL,
                        values = c('#0C5DA5', '#FF9500', 'black'),
-                       limits = c('All responses', '\"Bayes-orinented\" responses', 'Fully rational Bayesian'),
+                       limits = c('All responses', '\"Bayes-oriented\" responses', 'Fully rational Bayesian'),
                        guide = guide_legend(override.aes = list(
                            shape = c(124, 124, 19),
                            size = c(5, 5, 3)
@@ -68,4 +68,4 @@ gg <- ggplot(df_coin_melt, aes(x, y, group = group, color = '')) +
     theme(legend.position = 'bottom',
           text = element_text(size = 20, family = 'Palatino Linotype'))
 
-ggsave(gg, filename = 'bayes-results.png', width = 9, height = 6)
+ggsave(gg, filename = '../img/bayes-results.png', width = 9, height = 6)
