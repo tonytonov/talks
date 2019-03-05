@@ -449,11 +449,35 @@ Introduction to behavioral finance
 \end_layout
 
 \begin_layout Author
-Anton Antonov
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+small
+\end_layout
+
+\end_inset
+
+ Anton Antonov
 \begin_inset Newline newline
 \end_inset
 
-Ph.D., CQF, Quant at dxFeed
+
+\family typewriter
+
+\begin_inset CommandInset href
+LatexCommand href
+target "https://github.com/tonytonov/talks"
+literal "false"
+
+\end_inset
+
+
+\family default
+
 \begin_inset Argument 1
 status collapsed
 
@@ -468,10 +492,26 @@ Antonov
 \end_inset
 
 
+\begin_inset VSpace -5mm
+\end_inset
+
+
 \end_layout
 
 \begin_layout Date
-2019-03-05
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+small
+\end_layout
+
+\end_inset
+
+ 2019-03-05
 \end_layout
 
 \begin_layout TitleGraphic
@@ -754,7 +794,7 @@ Empirical
 \end_inset
 
 News arrive 
-\begin_inset Formula $\Longrightarrow$
+\begin_inset Formula $\Rightarrow$
 \end_inset
 
  price quickly and correctly adjusts
@@ -783,7 +823,7 @@ pause
 \end_inset
 
 No news about fundamentals 
-\begin_inset Formula $\Longrightarrow$
+\begin_inset Formula $\Rightarrow$
 \end_inset
 
  no significant price movements
@@ -3530,7 +3570,7 @@ A model of investor sentiment.
 
 \emph default
  Journal of Financial Economics 49, pp.
- 307–343
+ 307–343.
 \end_layout
 
 \begin_layout Bibliography
