@@ -2081,7 +2081,7 @@ pause
 \begin{align*}
 P(Data)= & \,P(Data|H^{*})P(H^{*})+\\
  & \,P(Data|T^{*})P(T^{*})=\\
-= & \,0.7^{K_{H}}0.3^{K_{T}}0.5+0.7^{K_{H}}0.3^{K_{T}}0.5
+= & \,0.7^{K_{H}}0.3^{K_{T}}0.5+0.3^{K_{H}}0.7^{K_{T}}0.5
 \end{align*}
 
 \end_inset
@@ -2168,7 +2168,7 @@ Count
 )
 \begin_inset Formula 
 \[
-P(H^{*}|Data)=\frac{0.7^{K_{H}}0.3^{K_{T}}}{0.7^{K_{H}}0.3^{K_{T}}+0.7^{K_{H}}0.3^{K_{T}}}
+P(H^{*}|Data)=\frac{0.7^{K_{H}}0.3^{K_{T}}}{0.7^{K_{H}}0.3^{K_{T}}+0.3^{K_{H}}0.7^{K_{T}}}
 \]
 
 \end_inset
