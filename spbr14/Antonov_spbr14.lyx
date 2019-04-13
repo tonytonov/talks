@@ -1,0 +1,3608 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+%%% PACKAGES (main content) %%%
+%\usepackage{qtree}
+%\usepackage{tree-dvips}
+%\usepackage{listings}
+%\usepackage[noend]{algpseudocode}
+%\usepackage{nicefrac}
+\usepackage{xypic}
+%\usepackage[english, russian]{babel}
+
+
+%%% APPEARANCE %%%
+%% Presentation theme %%
+%\usetheme{Hannover}
+\usetheme{dxFeed}
+% *** No navigation bar ***
+% default
+% Bergen:		difficult to get the spacing right
+% Boadilla:		default + author&event name
+% Madrid:		Boadilla w/darker colours
+% AnnArbor:	Boadilla w/Univ. of Michingan colours (blue/yellow)
+% CambridgeUS:	Boadilla w/MIT colours (red/grey)
+% Pittsburgh:	default and even more minimalistic
+% Rochester:	no navigation, dominant
+% *** Tree-like navigation bar ***
+% Antibes:		Rochester w/navigation bar
+% JuanLesPins:	Antibes w/rounded corners
+% Montpellier:	minimalistic
+% *** TOC sidebar ***
+% Berkeley:		TOC, names, logo. Rectangle corners
+% PaloAlto:		Berkeley w/rounded corners
+% Goettingen:	TOC, names. Light, sober
+% Marburg:		Goettingen but dominant
+% Hannover:	TOC, names. Light even more minimalistic
+% *** Mini frame navigation ***
+% Berlin:		dominant, names (for conferences)
+% Ilmenau:		Berlin w/rounded corners
+% Dresden:		minimalistic
+% Darmstadt:	no names
+% Frankfurt:	no names, no subsections
+% Singapore:	gradient, no names
+% Szeged:		strong dominance of horizontal lines
+% *** Section and subsection tables ***
+% Copenhagen:	flat, author, title, current section
+% Luebeck:		Copenhagen w/rectangle corners
+% Malmoe:		Copenhagen but minimalistic
+% Warsaw:		Copenhagen w/shadows and gradient
+%
+%% Color theme %%
+%\usecolortheme{wolverine}
+% structure
+% sidebartab
+% *** Full ***
+% albatross:	yellow on dark blue
+% beetle:		white and black on gray background
+% crane:		black on gray+yellow
+% dove:		grayscale
+% fly:		beetle but even darker
+% seagull:		grayscale w/boxes
+% wolverine:	yellow + orange
+% beaver:		MIT (black and red on gray)
+% *** Inner ***
+% lily:		reverts back to default
+% orchid:		white-on-dark block titles
+% rose: 		nearly transparent backgrounds for both block titles 
+%		and block bodies.
+% *** Outer ***
+% whale:		white-on-dark palette
+% seahorse:	near-transparent backgrounds
+% dolphin:		in the middle between the whale and the seahorse.
+%
+%% Outer theme %%
+%\useoutertheme{infolines}
+%\setbeamertemplate{headline}{} % removes the headline that infolines inserts
+% infolines:	current section&subsection; names, frame cnt, date
+% miniframes:	navi bar; author, inst, title
+% smoothbars:	miniframes w/transition effect between bars
+% sidebar:		TOC on the side
+% split:		current pos; author, title
+% shadow:		split w/shadows
+% tree
+% smoothtree
+%
+%% Inner theme %%
+%\useinnertheme{rectangles}
+% circles
+% rectangles
+% rounded:		pseudo-3d balls
+% imargin:		structuring information on the left and normal
+%		information on the right.
+%
+%% Font theme %%
+\usefonttheme{professionalfonts}
+% professionalfonts
+% serif
+% structurebold
+% structureitalicserif
+% structuresmallcapsserif
+%\usefonttheme[onlylarge]{structuresmallcapsserif}
+%\usefonttheme[onlysmall]{structurebold}
+
+%\setbeamerfont{title}{shape=\itshape,family=\rmfamily}
+%\setbeamercolor{title}{fg=red!80!black,bg=red!20!white}
+
+
+
+%%% HANDOUTS  %%%
+% Don't forget to add [handout] option to the beamer documentclass
+%\usepackage{pgfpages}
+
+% And one of...
+%\pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+%\pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm,landscape]
+%\pgfpagesuselayout{resize}[a4paper,border shrink=5mm,landscape]
+
+% This will cause the slides of the handout version to have a very light gray background. This makes it easy to discern the slides' border if several slides are put on one page.
+%\mode<handout>{\setbeamercolor{background canvas}{bg=black!5}}
+
+
+
+%%% MISC %%%
+%\setbeameroption{show notes on second screen=right}
+%\setbeameroption{show only notes}
+\setbeamertemplate{caption}[numbered]
+
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{animate}
+\usepackage{xmpmulti}
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator{\pdf}{pdf}
+\DeclareMathOperator{\pmf}{pmf}
+\DeclareMathOperator{\cdf}{cdf}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\sign}{sign}
+
+% For listings package: consistent monospace font
+\usepackage{listings}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\lstset{ %
+  backgroundcolor=\color{white},      % choose the background color
+  basicstyle=\ttfamily\footnotesize,  % size of fonts used for the code
+  breaklines=true,                    % automatic line breaking only at whitespace
+  captionpos=b,                       % sets the caption-position to bottom
+  commentstyle=\color{mygreen},       % comment style
+  escapeinside={\%*}{*)},             % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},          % keyword style
+  stringstyle=\color{mymauve},        % string literal style
+}
+\end_preamble
+\options aspectratio=169
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-ams-extended
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style mnras
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pgfdeclareimage[height=0.5cm]{institution-logo}{yu-institution-logo}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+logo{
+\backslash
+pgfuseimage{institution-logo}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+AtBeginSection[]{
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+frame<beamer>{ 
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+frametitle{Outline}   
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+tableofcontents[currentsection] 
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+AtBeginSubsection[]{
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+frame<beamer>{ 
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+frametitle{Outline}   
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+tableofcontents[currentsection,currentsubsection] 
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+beamerdefaultoverlayspecification{<+->}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+beamertemplatenavigationsymbolsempty
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\renewcommand{\O}{\mathcal{O}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\Lcal}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\Ical}{\mathcal{I}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Interoperability using R
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Interop & R
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subtitle
+
+\emph on
+Joining forces instead of separating
+\end_layout
+
+\begin_layout Author
+Anton Antonov 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{(
+\backslash
+href{https://github.com/tonytonov}{@tonytonov})}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{tonytonov@gmail.com}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+A.
+\begin_inset space \thinspace{}
+\end_inset
+
+Antonov
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+2019-04-14
+\end_layout
+
+\begin_layout TitleGraphic
+\begin_inset Graphics
+	filename ../../ZPSH/zpsh19/behfin_intro/dxfeed-logo-vertical.pdf
+	width 10text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Intro
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Interoperability
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{block}{
+\backslash
+citet{Malone} (emphasis mine -- AA)} Language interoperability is the capability
+ of two different programming languages to 
+\backslash
+emph{natively interact} as part of the same system.
+ 
+\backslash
+end{block}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Challenges:
+\end_layout
+
+\begin_layout Itemize
+Object and memory models are different
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Cross-debugging 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Performance overhead 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Cognitive effort due to increased complexity
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Interop directions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Breakdown by interop scheme:
+\end_layout
+
+\begin_layout Itemize
+R
+\begin_inset Formula $\to$
+\end_inset
+
+: use R inside other language
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\to$
+\end_inset
+
+R: use other language inside R
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Magic (next-gen VMs)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Historical perspective
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citet{Matloff}
+\end_layout
+
+\end_inset
+
+, The Art of R Programming, Chapter 15
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Two examples: C/C++ from R and R from Python
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+First example: manual compilation, then 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{dyn.load}
+\end_layout
+
+\end_inset
+
+, then 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{.C}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+1000x speedup for a simple time series prediction task 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Second example: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{rpy}
+\end_layout
+
+\end_inset
+
+, now 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{rpy2}
+\end_layout
+
+\end_inset
+
+ for Python 3
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+How to use R
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Standard input/output
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+As a shared library (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{R.dll}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{libR.so}
+\end_layout
+
+\end_inset
+
+, etc.)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Library can be built from R source: 
+\begin_inset CommandInset href
+LatexCommand href
+name "https://github.com/wch/r-source/"
+target "https://github.com/wch/r-source/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Also called R API
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Low-level, callable from C (or FORTRAN!)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+R as API
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Some examples from 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citet{R-ext}
+\end_layout
+
+\end_inset
+
+:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Any R object is of type 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{SEXP}
+\end_layout
+
+\end_inset
+
+, which is a pointer to a structure with 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{typedef SEXPREC}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{order(..., na.last, decreasing)}
+\end_layout
+
+\end_inset
+
+ is 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{void R
+\backslash
+_orderVector (int* indx, int n, SEXP arglist, Rboolean nalast, Rboolean
+ decreasing)}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Random number generation, distributions
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Mathematical functions and constants
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Numerical optimization, integration
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Rcpp
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+An integration between R and C++ that is easy to use
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Very popular among package authors to gain performance speedup
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Seamless
+\emph default
+: provides access to all R objects
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Handles compilation and linkage, platform dependency, etc.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Supports all modern features of C++11, C++14, C++17
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Backed up by great package extensions: RcppArmadillo, RcppParallel, RcppMLPACK,
+ ...
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Great documentation, gallery, supported by RStudio
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Rcpp (
+\begin_inset Formula $\to$
+\end_inset
+
+R) is accompanied by RInside (R
+\begin_inset Formula $\to$
+\end_inset
+
+)
+\end_layout
+
+\end_deeper
+\begin_layout Section
+rJava
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Java
+\begin_inset Formula $\to$
+\end_inset
+
+R
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Interface to Java, similar to the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{.C/.Call}
+\end_layout
+
+\end_inset
+
+ C interface
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+R
+\begin_inset Formula $\to$
+\end_inset
+
+Java also exists and is called JRI
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Requires both JRE and JDK to be installed
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Installation is a bit non-trivial (paths, flags, env.
+ vars)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example: dxFeed API
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 3
+status open
+
+\begin_layout Plain Layout
+fragile
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+library(rJava)
+\end_layout
+
+\begin_layout Plain Layout
+
+rjava_obj <- R6::R6Class('rJavaObject',
+\end_layout
+
+\begin_layout Plain Layout
+
+    public = list(jobject = NULL,
+\end_layout
+
+\begin_layout Plain Layout
+
+        get_orders = function() {
+\end_layout
+
+\begin_layout Plain Layout
+
+            .jcall(self$jobject, '[[D', 
+\end_layout
+
+\begin_layout Plain Layout
+
+                   method = 'getOrders', simplify = TRUE)
+\end_layout
+
+\begin_layout Plain Layout
+
+        },
+\end_layout
+
+\begin_layout Plain Layout
+
+        initialize = function(symbol) {
+\end_layout
+
+\begin_layout Plain Layout
+
+            .jinit(classpath = 'path/to/dxfeed-samples-3.254.jar')
+\end_layout
+
+\begin_layout Plain Layout
+
+            self$jobject <- .jnew('com.dxfeed.sample._simple_/OrderBookR', symbol)
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+    )
+\end_layout
+
+\begin_layout Plain Layout
+
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+tsla <- rjava_obj$new("TSLA"); Sys.sleep(2)
+\end_layout
+
+\begin_layout Plain Layout
+
+tsla$get_orders()
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Example: dxFeed API
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/dxfeed-rJava-book.png
+	width 75text%
+	height 75theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Markets are closed!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Rserve
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Overview
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{block}{
+\backslash
+citet{Urbanek}} Rserve is a TCP/IP server which allows other programs to
+ use facilities of R [...] without the need to initialize R or link to the
+ R library.
+ 
+\backslash
+end{block}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Features:
+\end_layout
+
+\begin_layout Itemize
+client/server, multiple connections, authentication
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+native data type conversion
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+clients for Java, C++, C#, Python, R, Haskell, JavaScript, Ruby, ...
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+binary transport, file transfer
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Rserve runs as a (remote) separate process!
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+As a process
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/rserve-task-manager.png
+	width 75text%
+	height 75theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Rserve, ready to serve
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Rserve example (Java code)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 3
+status open
+
+\begin_layout Plain Layout
+fragile
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+import org.rosuda.REngine.*;
+\end_layout
+
+\begin_layout Plain Layout
+
+import org.rosuda.REngine.Rserve.*;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+public class Main {
+\end_layout
+
+\begin_layout Plain Layout
+
+    public static void main(String[] args)
+\end_layout
+
+\begin_layout Plain Layout
+
+            throws RserveException, REXPMismatchException {
+\end_layout
+
+\begin_layout Plain Layout
+
+        RConnection c = new RConnection();
+\end_layout
+
+\begin_layout Plain Layout
+
+        REXP x = c.eval("R.version.string");
+\end_layout
+
+\begin_layout Plain Layout
+
+        System.out.println(x.asString());
+\end_layout
+
+\begin_layout Plain Layout
+
+        double d[] = c.eval("rnorm(10)").asDoubles();
+\end_layout
+
+\begin_layout Plain Layout
+
+        for (int i = 0; i < d.length; i++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+            System.out.println(d[i]);
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Rserve example (output)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 3
+status open
+
+\begin_layout Plain Layout
+fragile
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+"C:
+\backslash
+Program Files
+\backslash
+Java
+\backslash
+jdk1.8.0_181
+\backslash
+bin
+\backslash
+java.exe" (...)
+\end_layout
+
+\begin_layout Plain Layout
+
+R version 3.5.1 (2018-07-02)
+\end_layout
+
+\begin_layout Plain Layout
+
+1.1970643462988602
+\end_layout
+
+\begin_layout Plain Layout
+
+-0.5769699503103762
+\end_layout
+
+\begin_layout Plain Layout
+
+-0.3684006009955729
+\end_layout
+
+\begin_layout Plain Layout
+
+0.06546082679467544
+\end_layout
+
+\begin_layout Plain Layout
+
+1.2032233686962528
+\end_layout
+
+\begin_layout Plain Layout
+
+-0.04087141177944551
+\end_layout
+
+\begin_layout Plain Layout
+
+1.7461656480450007
+\end_layout
+
+\begin_layout Plain Layout
+
+1.8672363049908611
+\end_layout
+
+\begin_layout Plain Layout
+
+-1.1040409417073296
+\end_layout
+
+\begin_layout Plain Layout
+
+-0.6567773875872637
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Process finished with exit code 0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Rserve example (plotting)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/rserve-iris.png
+	width 75text%
+	height 75theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Beloved flowers, now in Java
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+R to Py to R
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+R and Python
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Very popular interop (due to similarity)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+R
+\begin_inset Formula $\to$
+\end_inset
+
+: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{pyRserve}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{rpy2}
+\end_layout
+
+\end_inset
+
+, ...
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\to$
+\end_inset
+
+R: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{reticulate}
+\end_layout
+
+\end_inset
+
+, ...
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{pyRserve}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 3
+status open
+
+\begin_layout Plain Layout
+fragile
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>>> import pyRserve
+\end_layout
+
+\begin_layout Plain Layout
+
+>>> conn = pyRserve.connect()
+\end_layout
+
+\begin_layout Plain Layout
+
+>>> conn.voidEval('doubleit <- function(x) { x*2 }')
+\end_layout
+
+\begin_layout Plain Layout
+
+>>> conn.eval('doubleit(2)')
+\end_layout
+
+\begin_layout Plain Layout
+
+4.0
+\end_layout
+
+\begin_layout Plain Layout
+
+>>> conn.voidEval('tripleit <- function(y) { y*3 }')
+\end_layout
+
+\begin_layout Plain Layout
+
+>>> conn.r.tripleit(5)
+\end_layout
+
+\begin_layout Plain Layout
+
+15.0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{pyRserve}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 3
+status open
+
+\begin_layout Plain Layout
+fragile
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+R> t.test(c(1,2,3,1), c(1,6,7,8))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+     Welch Two Sample t-test
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+data:  c(1, 2, 3, 1) and c(1, 6, 7, 8)
+\end_layout
+
+\begin_layout Plain Layout
+
+t = -2.3054, df = 3.564, p-value = 0.09053
+\end_layout
+
+\begin_layout Plain Layout
+
+alternative hypothesis: true difference in means is not equal to 0
+\end_layout
+
+\begin_layout Plain Layout
+
+95 percent confidence interval:
+\end_layout
+
+\begin_layout Plain Layout
+
+ -8.4926941  0.9926941
+\end_layout
+
+\begin_layout Plain Layout
+
+sample estimates:
+\end_layout
+
+\begin_layout Plain Layout
+
+mean of x mean of y
+\end_layout
+
+\begin_layout Plain Layout
+
+     1.75      5.50
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{pyRserve}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 3
+status open
+
+\begin_layout Plain Layout
+fragile
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+>>> conn.r.t.test(numpy.array([1,2,3,1]), numpy.array([1,6,7,8]))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+<TaggedList
+\end_layout
+
+\begin_layout Plain Layout
+
+(statistic=TaggedArray([-2.30541984], key=['t']), 
+\end_layout
+
+\begin_layout Plain Layout
+
+parameter=TaggedArray([3.56389482], key=['df']), 
+\end_layout
+
+\begin_layout Plain Layout
+
+p.value=0.09053264073333127, 
+\end_layout
+
+\begin_layout Plain Layout
+
+conf.int=AttrArray([-8.49269413, 0.99269413], 
+\end_layout
+
+\begin_layout Plain Layout
+
+attr={'conf.level': array([0.95])}), 
+\end_layout
+
+\begin_layout Plain Layout
+
+estimate=TaggedArray([1.75, 5.5 ], 
+\end_layout
+
+\begin_layout Plain Layout
+
+key=['mean of x', 'mean of y']), 
+\end_layout
+
+\begin_layout Plain Layout
+
+null.value=TaggedArray([0.], 
+\end_layout
+
+\begin_layout Plain Layout
+
+key=['difference in means']), 
+\end_layout
+
+\begin_layout Plain Layout
+
+alternative='two.sided', 
+\end_layout
+
+\begin_layout Plain Layout
+
+method='Welch Two Sample t-test', 
+\end_layout
+
+\begin_layout Plain Layout
+
+data.name='arg_0_ and arg_1_')>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{rpy2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The usage is very similar to 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{pyRserve}
+\end_layout
+
+\end_inset
+
+ via 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{rpy2.interface}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{rpy2.robjects}
+\end_layout
+
+\end_inset
+
+ provides more high-level facilities:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Bindings for functions, environments, arbitrary R objects
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Extended bindings for vectors, matrices, data frames (incl.
+ R-style subsetting and assigning)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Bindings between 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{rpy2}
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{numpy}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{pandas}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{rpy2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 3
+status open
+
+\begin_layout Plain Layout
+fragile
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+from rpy2.robjects.packages import importr, data 
+\end_layout
+
+\begin_layout Plain Layout
+
+datasets = importr('datasets') 
+\end_layout
+
+\begin_layout Plain Layout
+
+mtcars_env = data(datasets).fetch('mtcars') 
+\end_layout
+
+\begin_layout Plain Layout
+
+mtcars = mtcars_env['mtcars']
+\end_layout
+
+\begin_layout Plain Layout
+
+from rpy2.robjects.lib.dplyr import (DataFrame, filter, mutate, group_by, summarize
+)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+dataf = (DataFrame(mtcars) >>
+\end_layout
+
+\begin_layout Plain Layout
+
+         filter('gear>3') >>
+\end_layout
+
+\begin_layout Plain Layout
+
+         mutate(powertoweight='hp*36/wt') >>
+\end_layout
+
+\begin_layout Plain Layout
+
+         group_by('gear') >>
+\end_layout
+
+\begin_layout Plain Layout
+
+         summarize(mean_ptw='mean(powertoweight)'))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{reticulate}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 3
+status open
+
+\begin_layout Plain Layout
+fragile
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Object/type conversions, incl.
+ lists, data frames, functions
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Import modules and refer to them from R
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+RStudio allows mixing Python and R chunks in R Markdown, supports 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texttt{matplotlib}
+\end_layout
+
+\end_inset
+
+ output
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=R"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+R> library(reticulate)
+\end_layout
+
+\begin_layout Plain Layout
+
+R> np <- import("numpy")
+\end_layout
+
+\begin_layout Plain Layout
+
+R> a <- np$array(c(1:4))
+\end_layout
+
+\begin_layout Plain Layout
+
+R> cumsum(a)
+\end_layout
+
+\begin_layout Plain Layout
+
+[1]  1  3  6 10
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+GraalVM
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Holy ...
+ Graal?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+GraalVM: extension of the JVM, supporting polyglot programming 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Catch: it uses a different R implementation, FastR
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/graalvm-arch.png
+	width 75text%
+	height 75theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Pure magic in one image
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Java/JavaScript/R example
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 3
+status open
+
+\begin_layout Plain Layout
+fragile
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# Run container
+\end_layout
+
+\begin_layout Plain Layout
+
+docker run -p 3000:3000 -it -v C:/dxfeed/graalvm-demos:/home oracle/graalvm-ce:1.
+0.0-rc15 bash 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Execute in the container
+\end_layout
+
+\begin_layout Plain Layout
+
+gu install r
+\end_layout
+
+\begin_layout Plain Layout
+
+cd /home/polyglot-javascript-java-r/
+\end_layout
+
+\begin_layout Plain Layout
+
+node --jvm --polyglot server.js
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Java/JavaScript/R example
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 3
+status open
+
+\begin_layout Plain Layout
+fragile
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# In server.js
+\end_layout
+
+\begin_layout Plain Layout
+
+const express = require('express')
+\end_layout
+
+\begin_layout Plain Layout
+
+const app = express()
+\end_layout
+
+\begin_layout Plain Layout
+
+const BigInteger = Java.type('java.math.BigInteger')
+\end_layout
+
+\begin_layout Plain Layout
+
+app.get('/', function (req, res) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  // Using Java standard library classes 
+\end_layout
+
+\begin_layout Plain Layout
+
+  text += BigInteger.valueOf(10).pow(100)
+\end_layout
+
+\begin_layout Plain Layout
+
+          .add(BigInteger.valueOf(43)).toString() + '<br>'
+\end_layout
+
+\begin_layout Plain Layout
+
+  // Using R interoperability to create graphs
+\end_layout
+
+\begin_layout Plain Layout
+
+  text += Polyglot.eval('R',
+\end_layout
+
+\begin_layout Plain Layout
+
+    `svg(); require(lattice)
+\end_layout
+
+\begin_layout Plain Layout
+
+     x <- 5 * 1:1000; y <- sin(x); z <- cos(x)
+\end_layout
+
+\begin_layout Plain Layout
+
+     print(cloud(x~y*z, main="cloud plot"))
+\end_layout
+
+\begin_layout Plain Layout
+
+     grDevices:::svg.off()`);
+\end_layout
+
+\begin_layout Plain Layout
+
+  res.send(text)
+\end_layout
+
+\begin_layout Plain Layout
+
+})
+\end_layout
+
+\begin_layout Plain Layout
+
+app.listen(3000)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Java/JavaScript/R example
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/graal-example.png
+	width 75text%
+	height 75theight%
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Drawing with R in your browser
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{block}{Takeaway} Interop is hard, but we're standing on the shoulders
+ of giants.
+ 
+\backslash
+end{block}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pause
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset VSpace 10mm
+\end_inset
+
+Thanks!
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "https://github.com/tonytonov/talks"
+target "https://github.com/tonytonov/talks"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+References
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+beamertemplatebookbibitems
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bibliographystyle{abbrvnat}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Malone, 2014"
+key "Malone"
+literal "false"
+
+\end_inset
+
+Malone, Todd (2014).
+ 
+\emph on
+Interoperability in Programming Languages.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Matloff (2011)"
+key "Matloff"
+literal "false"
+
+\end_inset
+
+Matloff, Norman (2011).
+ 
+\emph on
+The Art of R Programming: A Tour of Statistical Software Design.
+
+\emph default
+ No Starch Press, San Francisco, CA, USA.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Urbanek (2003)"
+key "Urbanek"
+literal "false"
+
+\end_inset
+
+Urbanek, Simon (2003).
+ 
+\emph on
+Rserve A fast way to provide R functionality to applications.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Eddelbuetel, Francois (2011)"
+key "Eddelbuetel, Francois"
+literal "false"
+
+\end_inset
+
+Eddelbuettel, Dirk and Francois, Romain (2011).
+ 
+\emph on
+Rcpp: Seamless R and C++ Integration.
+
+\emph default
+ Journal of Statistical Software, 40(8), 1-18.
+\end_layout
+
+\begin_layout Bibliography
+\labelwidthstring References
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "R Development Core Team (2011)"
+key "R-ext"
+literal "false"
+
+\end_inset
+
+R Development Core Team (2011).
+ 
+\emph on
+Writing R Extensions.
+
+\emph default
+ R Foundation for Statistical Computing, Vienna, Austria.
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
