@@ -1,0 +1,26 @@
+# Run container
+docker run -p 3000:3000 -it -v path/to/graalvm-demos:/
+home oracle/graalvm -ce:1.0.0-rc15 bash
+
+# Execute in the container
+gu install r
+cd /home/polyglot -javascript -java-r/
+node --jvm --polyglot server.js
+
+# In server.js
+const express = require('express')
+const app = express()
+const BigInteger = Java.type('java.math.BigInteger')
+app.get('/', function (req, res) {
+  // Using Java standard library classes 
+  text += BigInteger.valueOf(10).pow(100)
+          .add(BigInteger.valueOf(43)).toString() + '<br>'
+  // Using R interoperability to create graphs
+  text += Polyglot.eval('R',
+    `svg(); require(lattice)
+     x <- 5 * 1:1000; y <- sin(x); z <- cos(x)
+     print(cloud(x~y*z, main="cloud plot"))
+     grDevices:::svg.off()`);
+  res.send(text)
+})
+app.listen(3000)

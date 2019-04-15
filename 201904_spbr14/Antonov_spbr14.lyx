@@ -1121,7 +1121,8 @@ texttt{order(..., na.last, decreasing)}
 
 \end_inset
 
- is 
+ may lead to e.g.
+ 
 \begin_inset ERT
 status open
 
@@ -1542,7 +1543,7 @@ rjava_obj <- R6::R6Class('rJavaObject',
 
 \begin_layout Plain Layout
 
-            .jinit(classpath = 'path/to/dxfeed-samples-3.254.jar')
+            .jinit(classpath = '/path/to/dxfeed-samples-rjava.jar')
 \end_layout
 
 \begin_layout Plain Layout
