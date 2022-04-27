@@ -1,0 +1,1379 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass beamer
+\begin_preamble
+%%% PACKAGES (main content) %%%
+%\usepackage{qtree}
+%\usepackage{tree-dvips}
+%\usepackage{listings}
+%\usepackage[noend]{algpseudocode}
+%\usepackage{nicefrac}
+\usepackage{xypic}
+%\usepackage[english, russian]{babel}
+
+%%% APPEARANCE %%%
+%% Presentation theme %%
+%\usetheme{Hannover}
+\usetheme{dxFeed}
+% *** No navigation bar ***
+% default
+% Bergen:		difficult to get the spacing right
+% Boadilla:		default + author&event name
+% Madrid:		Boadilla w/darker colours
+% AnnArbor:	Boadilla w/Univ. of Michingan colours (blue/yellow)
+% CambridgeUS:	Boadilla w/MIT colours (red/grey)
+% Pittsburgh:	default and even more minimalistic
+% Rochester:	no navigation, dominant
+% *** Tree-like navigation bar ***
+% Antibes:		Rochester w/navigation bar
+% JuanLesPins:	Antibes w/rounded corners
+% Montpellier:	minimalistic
+% *** TOC sidebar ***
+% Berkeley:		TOC, names, logo. Rectangle corners
+% PaloAlto:		Berkeley w/rounded corners
+% Goettingen:	TOC, names. Light, sober
+% Marburg:		Goettingen but dominant
+% Hannover:	TOC, names. Light even more minimalistic
+% *** Mini frame navigation ***
+% Berlin:		dominant, names (for conferences)
+% Ilmenau:		Berlin w/rounded corners
+% Dresden:		minimalistic
+% Darmstadt:	no names
+% Frankfurt:	no names, no subsections
+% Singapore:	gradient, no names
+% Szeged:		strong dominance of horizontal lines
+% *** Section and subsection tables ***
+% Copenhagen:	flat, author, title, current section
+% Luebeck:		Copenhagen w/rectangle corners
+% Malmoe:		Copenhagen but minimalistic
+% Warsaw:		Copenhagen w/shadows and gradient
+%
+%% Color theme %%
+%\usecolortheme{wolverine}
+% structure
+% sidebartab
+% *** Full ***
+% albatross:	yellow on dark blue
+% beetle:		white and black on gray background
+% crane:		black on gray+yellow
+% dove:		grayscale
+% fly:		beetle but even darker
+% seagull:		grayscale w/boxes
+% wolverine:	yellow + orange
+% beaver:		MIT (black and red on gray)
+% *** Inner ***
+% lily:		reverts back to default
+% orchid:		white-on-dark block titles
+% rose: 		nearly transparent backgrounds for both block titles 
+%		and block bodies.
+% *** Outer ***
+% whale:		white-on-dark palette
+% seahorse:	near-transparent backgrounds
+% dolphin:		in the middle between the whale and the seahorse.
+%
+%% Outer theme %%
+%\useoutertheme{infolines}
+%\setbeamertemplate{headline}{} % removes the headline that infolines inserts
+% infolines:	current section&subsection; names, frame cnt, date
+% miniframes:	navi bar; author, inst, title
+% smoothbars:	miniframes w/transition effect between bars
+% sidebar:		TOC on the side
+% split:		current pos; author, title
+% shadow:		split w/shadows
+% tree
+% smoothtree
+%
+%% Inner theme %%
+%\useinnertheme{rectangles}
+% circles
+% rectangles
+% rounded:		pseudo-3d balls
+% imargin:		structuring information on the left and normal
+%		information on the right.
+%
+%% Font theme %%
+\usefonttheme{professionalfonts}
+% professionalfonts
+% serif
+% structurebold
+% structureitalicserif
+% structuresmallcapsserif
+%\usefonttheme[onlylarge]{structuresmallcapsserif}
+%\usefonttheme[onlysmall]{structurebold}
+
+%\setbeamerfont{title}{shape=\itshape,family=\rmfamily}
+%\setbeamercolor{title}{fg=red!80!black,bg=red!20!white}
+
+
+
+%%% HANDOUTS  %%%
+% Don't forget to add [handout] option to the beamer documentclass
+%\usepackage{pgfpages}
+
+% And one of...
+%\pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+%\pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm,landscape]
+%\pgfpagesuselayout{resize}[a4paper,border shrink=5mm,landscape]
+
+% This will cause the slides of the handout version to have a very light gray background. This makes it easy to discern the slides' border if several slides are put on one page.
+%\mode<handout>{\setbeamercolor{background canvas}{bg=black!5}}
+
+
+
+%%% MISC %%%
+%\setbeameroption{show notes on second screen=right}
+%\setbeameroption{show only notes}
+\setbeamertemplate{caption}[numbered]
+%\setbeamersize{sidebar width left=0pt}
+%\setbeamertemplate{frametitle}[default][left]
+
+%{font size}{skip line size}
+\setbeamerfont{section in sidebar}{size*={6}{6}}
+\setbeamerfont{subsection in sidebar}{size*={5}{6}}
+
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{animate}
+\usepackage{xmpmulti}
+\usepackage{cancel}
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator{\pdf}{pdf}
+\DeclareMathOperator{\pmf}{pmf}
+\DeclareMathOperator{\cdf}{cdf}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\sign}{sign}
+\end_preamble
+\options aspectratio=169, 16pt
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-ams-extended
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "Merriweather"
+\font_sans "default" "Merriweather"
+\font_typewriter "NotoMono-TLF" "Consolas"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype true
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "urlcolor=dxFeedBlue,linkcolor=white"
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+linespread{1.3}
+\backslash
+selectfont{} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+AtBeginSection[]{
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+frame<beamer>{ 
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+frametitle{Outline}   
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+tableofcontents[currentsection] 
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+AtBeginSubsection[]{
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+frame<beamer>{ 
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+frametitle{Outline}   
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+tableofcontents[currentsection,currentsubsection] 
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+beamerdefaultoverlayspecification{<+->}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+beamertemplatenavigationsymbolsempty
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\renewcommand{\O}{\mathcal{O}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\Lcal}{\mathcal{L}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\Ical}{\mathcal{I}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\I}{\mathcal{I}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\T}{\mathcal{T}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\vol}{\mathsf{vol}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\A}{\mathcal{A}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Iceberg Order Detection & Prediction
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Icebergs QI
+\begin_inset space ~
+\end_inset
+
+2020
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+Anton Antonov
+\begin_inset Newline newline
+\end_inset
+
+
+\family typewriter
+antonov@dxfeed.com
+\family default
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+A.
+\begin_inset space \thinspace{}
+\end_inset
+
+Antonov
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+Quant Insights 2020
+\end_layout
+
+\begin_layout TitleGraphic
+\begin_inset Graphics
+	filename dxfeed-logo-vertical-white.pdf
+	width 10text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Paper
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+CME Iceberg Order Detection and Prediction
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+www.tandfonline.com/doi/abs/10.1080/14697688.2020.1813904
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ColumnsCenterAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.5
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Ahead of print in Quantitative Finance
+\end_layout
+
+\begin_layout Itemize
+Print copies available on request
+\end_layout
+
+\begin_layout Itemize
+Preprint (outdated) version on ArXiV
+\end_layout
+
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.5
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/qr-code-tand.png
+	lyxscale 10
+	width 70line%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Frame
+\begin_inset VSpace 20pt
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Literature Overview
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Bouchaud et al., 
+\emph on
+Trades, Quotes and Prices
+\end_layout
+
+\begin_layout Itemize
+Price impact, front-running strategies
+\end_layout
+
+\begin_layout Itemize
+Hidden liqudity, iceberg orders: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Moro et al.
+ (2009)
+\end_layout
+
+\begin_layout Itemize
+Hautsch and Huang (2010)
+\end_layout
+
+\begin_layout Itemize
+Christensen and Woodmansey (2013)
+\end_layout
+
+\begin_layout Itemize
+Frey and Sandås (2017)
+\end_layout
+
+\begin_layout Itemize
+Fleming et al.
+ (2018)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+C&W (2013): similar framework, predictive model
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Iceberg Order Types
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Iceberg Order Types
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\size small
+CME offers 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+
+\size small
+native
+\end_layout
+
+\end_inset
+
+
+\emph on
+ 
+\emph default
+icebergs:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\size small
+Order submission 
+\begin_inset Formula $[P,S,V_{\mathrm{peak}},V_{\mathrm{total}}]$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+Until 
+\begin_inset Formula $V_{\mathrm{total}}$
+\end_inset
+
+ is exhausted, 
+\emph on
+refill
+\emph default
+ 
+\begin_inset Formula $V_{\mathrm{peak}}$
+\end_inset
+
+ every time it is fully traded
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+Order ID is preserved
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\size small
+\begin_inset VSpace 10pt
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Pause
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\size small
+Independent software vendors offer 
+\begin_inset Flex Structure
+status open
+
+\begin_layout Plain Layout
+
+\size small
+synthetic
+\end_layout
+
+\end_inset
+
+ icebergs:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\size small
+No persistent ID: easier to hide, higher costs
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+Key assumption: refill happens at the same level 
+\begin_inset Formula $P$
+\end_inset
+
+ and side 
+\begin_inset Formula $S$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+No ground truth
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Native
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Native Icebergs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Finite state machine with states
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+new
+\end_layout
+
+\begin_layout Itemize
+modify (refill)
+\end_layout
+
+\begin_layout Itemize
+trade
+\end_layout
+
+\begin_layout Itemize
+delete
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+FOD LOB historical tapes + CME protocol specification
+\end_layout
+
+\begin_layout Itemize
+Detection: 
+\begin_inset Formula $\{V_{\mathrm{peak}},V_{\mathrm{total}},E\}$
+\end_inset
+
+, where 
+\begin_inset Formula $E\in\{\mathrm{finished},\mathrm{cancelled}\}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Synthetic
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Synthetic Icebergs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout ColumnsCenterAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.5
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+How to link trades and refills?
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+C&W (2013): 
+\begin_inset Formula $\Delta t$
+\end_inset
+
+ is the maximum allowed time for refill
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+Tree structure and weighting scheme are introduced
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+Detection: 
+\begin_inset Formula $\{V_{\mathrm{peak}},V_{\mathrm{total}},E\}$
+\end_inset
+
+, where 
+\begin_inset Formula $E\in\{\text{finished, cancelled}\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Column
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.5
+\backslash
+textwidth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/iceberg-tree.png
+	lyxscale 10
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Section
+Predictive Model
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Predictive Model
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Input data: 
+\begin_inset Formula $\{V_{\mathrm{peak}},V_{\mathrm{total}},E\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Problem: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Infer presence of hidden volume (classification)
+\end_layout
+
+\begin_layout Itemize
+Infer 
+\begin_inset Formula $V_{total}$
+\end_inset
+
+ by observing 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $V_{peak}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ (regression)
+\end_layout
+
+\begin_layout Itemize
+Account for order cancellations
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+C&W (2013): kernel density estimate
+\end_layout
+
+\begin_layout Itemize
+Survival analysis with right-censored data
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Weighted Kaplan-Meier estimator
+\end_layout
+
+\begin_layout Itemize
+Bayesian model based on near-ignorant Dirichlet process
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Section
+Results
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Detection Results
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ESU19, E-mini S&P 500 futures contract
+\end_layout
+
+\begin_layout Itemize
+Training sample: 3 days (19M messages)
+\end_layout
+
+\begin_layout Itemize
+Descriptive analysis:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Native: 3.8% by traded volume, 0.06% by count
+\end_layout
+
+\begin_layout Itemize
+Synthetic: 3.3%–14% by traded volume
+\end_layout
+
+\begin_layout Itemize
+Human bias towards round numbers
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Prediction Results
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+ESU19 data
+\end_layout
+
+\begin_layout Itemize
+Testing sample: 1 day (6M messages)
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+Classification: 
+\end_layout
+
+\begin_layout Itemize
+Native F1: 0.71–0.86
+\end_layout
+
+\begin_layout Itemize
+Synthetic F1: 0.58–0.70
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Summary & Future Work
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Summary
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Our extensions of framework in C&W (2013): 
+\end_layout
+
+\begin_layout Itemize
+Formalization of native and synthetic icebergs
+\end_layout
+
+\begin_layout Itemize
+Formalization of detection procedure on CME FOD LOB data
+\end_layout
+
+\begin_layout Itemize
+Survival analysis accounts for order deletions
+\end_layout
+
+\begin_layout Itemize
+Hidden volume estimates in line with previously reported
+\end_layout
+
+\begin_layout Itemize
+Detection and prediction are compatible with real-time data stream
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Possible Improvements
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+More coverage: studies across time and assets
+\end_layout
+
+\begin_layout Itemize
+Performance and robustness
+\end_layout
+
+\begin_layout Itemize
+Alternative models (e.g.
+ semi-parametric relative risk models with covariates)
+\end_layout
+
+\begin_layout Standard
+Different problem statement:
+\end_layout
+
+\begin_layout Standard
+\align center
+What's the probability that an incoming order has hidden volume given the
+ state of the LOB (e.g.
+ handcrafted features)?
+\end_layout
+
+\begin_layout Standard
+Internal competition result: AUROC = 0.84
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Thanks
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/qr-code-tand.png
+	lyxscale 10
+	width 35line%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+dxFeed: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+www.dxfeed.com
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Quant research unit: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Dmitry Zotikov: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+www.linkedin.com/in/zot
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Anton Antonov: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+www.linkedin.com/in/tonytonov
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\end_body
+\end_document
