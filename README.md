@@ -8,3 +8,4 @@ Public talks given at various times and places.
 `202012_spbr17` -- R in linguistic studies (St. Petersburg R User Group, Applied R Munich Christmas Edition, Dec. 2020)  
 `202204_dkf22` -- Index everything (DKF-22, Apr. 2025)  
 `202505_dkf25` -- The market whisperers: how we tame our AI models (DKF-25, May 2025)
+`202510_awscloud2025` -- Modern AI-infused applications for financial markets (AWS Cloud Day Prague, Oct. 2025)
